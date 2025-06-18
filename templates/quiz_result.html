@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Quiz Result</h2>
+<p><strong>Quiz:</strong> {{ quiz.title }}</p>
+
+{% if result %}
+    <p><strong>Your Score:</strong> {{ result.score }}</p>
+{% else %}
+    <p>No result found.</p>
+{% endif %}
+
+<a href="{{ url_for('home') }}" class="btn btn-primary">Back to Home</a>
+{% endblock %}

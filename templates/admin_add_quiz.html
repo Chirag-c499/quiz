@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add New Quiz</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Quiz Title</label>
+    <input class="form-control" name="title" required>
+  </div>
+
+  {% for i in range(1, 6) %}
+    <hr>
+    <h5>Question {{ i }}</h5>
+    <input class="form-control mb-2" name="q{{ i }}" placeholder="Question Text" required>
+    <input class="form-control mb-2" name="q{{ i }}_a" placeholder="Option A" required>
+    <input class="form-control mb-2" name="q{{ i }}_b" placeholder="Option B" required>
+    <input class="form-control mb-2" name="q{{ i }}_c" placeholder="Option C" required>
+    <input class="form-control mb-2" name="q{{ i }}_d" placeholder="Option D" required>
+    <select class="form-select mb-2" name="q{{ i }}_correct" required>
+      <option value="">Correct Answer</option>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+      <option value="d">D</option>
+    </select>
+  {% endfor %}
+
+  <button class="btn btn-primary">Create Quiz</button>
+</form>
+{% endblock %}

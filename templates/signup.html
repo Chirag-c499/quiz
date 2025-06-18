@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Signup</h2>
+<form method="post">
+    <div class="mb-3">
+        <label>Username</label>
+        <input class="form-control" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" required>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" name="admin">
+        <label class="form-check-label">Register as Admin</label>
+    </div>
+    <button class="btn btn-primary">Signup</button>
+</form>
+{% endblock %}

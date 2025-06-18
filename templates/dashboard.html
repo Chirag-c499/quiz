@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome to Python Quiz Portal</h2>
+<p>Hello, {{ user.username if user else "Guest" }}!</p>
+{% if user %}
+    <a href="/quizzes" class="btn btn-primary">Take a Quiz</a>
+{% else %}
+    <a href="/login" class="btn btn-primary">Login to Start</a>
+{% endif %}
+{% endblock %}
